@@ -10,7 +10,7 @@ Nerd Outfit grants a Reflective Shock to oncoming attackers:
 * Doesn't effect players
 
 # Nerd Outfit Changes
-* Free Skill Chance has been removed.
+* Free Skill Point Chance has been removed.
 * Added Shock Chance Effect T1-6 (+5%,+10%,+15%,+20%,+25%,+30%)
 * Baseline Charges: 3. Charges replenish every 30 seconds. First 3 hits are guaranteed to shock, after that it defaults to random chance based on Nerd Outfit tier.
 
