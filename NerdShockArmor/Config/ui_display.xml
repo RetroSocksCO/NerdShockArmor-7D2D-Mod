@@ -1,0 +1,3 @@
+﻿<config>
+	<set xpath="/ui_display_info/item_display/item_display_info[@display_type='armorNerdOutfit']/display_entry[@name='dAttributeLevel']/@title_key">statReflectiveShockArmor</set>
+</config>

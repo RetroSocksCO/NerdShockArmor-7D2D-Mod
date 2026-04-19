@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<Name value="NerdShockArmor" />
+	<DisplayName value="Nerd Shock Armor" />
+	<Description value="Replaces Free Skill Point for Reflective Shock Buff." />
+	<Author value="therealburnstein" />
+	<Version value="1.0" />
+	<Website value="https://www.retrosocks.co/" />
+	<SkipWithAntiCheat value="false" />
+</xml>

@@ -1,0 +1,87 @@
+﻿<configs>
+
+<!-- remove old items -->
+<remove xpath="/items/item[@name='armorNerdOutfit']"/>
+
+<append xpath="/items">
+	
+		<!-- *** NERD_OUTFIT -->
+<item name="armorNerdOutfit">
+	<property name="Extends" value="armorHeavyMaster" param1="CustomIcon"/>
+	<property name="DescriptionKey" value="armorNerdOutfitDesc"/>
+	<property name="DisplayType" value="armorNerdOutfit"/>
+	<property name="ArmorGroup" value="groupNerd"/>
+	<property name="Tags" value="upperbody,chest,armor,armorChest,heavyArmor,heavyArmorPenalty,heavyArmorDeg,armorHeavySkill,biomeChallenge"/>
+	<property name="EquipSlot" value="Chest"/>
+	<property name="SoundPickup" value="outfit_metal_grab"/>
+	<property name="SoundPlace" value="outfit_metal_place"/>
+	<effect_group name="NerdOutfit">
+		<passive_effect name="ModSlots" operation="base_set" value="2,2,3,3,4,5" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="18,21" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="18,21" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
+		<passive_effect name="BuffResistance" operation="base_add" value="0.061,0.076" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="250,500" tier="1,6"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1.25" tags="heavyArmorDeg"/>
+		<!-- <passive_effect name="HypothermalResist" operation="base_add" value="20"/> -->
+		<!-- <passive_effect name="HyperthermalResist" operation="base_add" value="20"/> -->
+		
+		<passive_effect name="Mobility" operation="perc_add" value="-.075"/>
+		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.045" tags="walking"/>
+		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.09" tags="running"/>
+		<display_value name="dStaminaChangeOT" value="-.9"/>
+		<passive_effect name="NoiseMultiplier" operation="perc_add" value=".2"/>
+		<display_value name="dNoiseMultiplier" value=".2"/>
+		
+		<display_value name="dAttributeLevel" value=".05,.1,.15,.2,.25,.3" tier="1,2,3,4,5,6"/>
+	</effect_group>
+
+		<!-- Capacitor chest: 3 stored shocks, 30s recharge per charge, then tier-based fallback proc -->
+	<effect_group>
+		<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$nerdShockChance" operation="set" value="5">
+			<requirement name="RequirementItemTier" operation="Equals" value="1"/>
+			<requirement name="IsEquipped"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$nerdShockChance" operation="set" value="10">
+			<requirement name="RequirementItemTier" operation="Equals" value="2"/>
+			<requirement name="IsEquipped"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$nerdShockChance" operation="set" value="15">
+			<requirement name="RequirementItemTier" operation="Equals" value="3"/>
+			<requirement name="IsEquipped"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$nerdShockChance" operation="set" value="20">
+			<requirement name="RequirementItemTier" operation="Equals" value="4"/>
+			<requirement name="IsEquipped"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$nerdShockChance" operation="set" value="25">
+			<requirement name="RequirementItemTier" operation="Equals" value="5"/>
+			<requirement name="IsEquipped"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$nerdShockChance" operation="set" value="30">
+			<requirement name="RequirementItemTier" operation="Equals" value="6"/>
+			<requirement name="IsEquipped"/>
+		</triggered_effect>
+	</effect_group>
+	<effect_group>
+		<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffNerdOutfit"/>
+		<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffNerdCapacitor"/>
+		<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffNerdOutfit"/>
+		<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffNerdCapacitor"/>
+		<triggered_effect trigger="onSelfEquipStop" action="RemoveCVar" cvar="$nerdShockChance"/>
+	</effect_group>
+
+	<property class="SDCS">
+		<property name="Prefab" value="@:Entities/Player/{sex}/Gear/Nerd/gear{sex}NerdPrefab.prefab"/>
+		<property name="TransformName" value="body"/>
+		<property name="Excludes" value="body"/>
+	</property>
+</item>
+
+</append>
+	
+</configs>
+
+
