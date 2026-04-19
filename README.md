@@ -1,5 +1,5 @@
 # NerdShockArmor
-<img width="1920" height="1080" alt="251570_9" src="https://github.com/user-attachments/assets/e4fab776-48bd-4b97-abf8-9c99be700b92" />
+<img width="1920" height="1080" alt="251570_10" src="https://github.com/user-attachments/assets/ad8308a3-f7a1-4fc1-bf1f-13414ff1686d" />
 
 
 * A 7 Days to Die V 2.6 Experimental Mod.
