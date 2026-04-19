@@ -1,4 +1,6 @@
 # NerdShockArmor
+<img width="1920" height="1080" alt="251570_9" src="https://github.com/user-attachments/assets/e4fab776-48bd-4b97-abf8-9c99be700b92" />
+
 
 * A 7 Days to Die V 2.6 Experimental Mod.
 * Client, Server, and EAC-friendly Mod.
